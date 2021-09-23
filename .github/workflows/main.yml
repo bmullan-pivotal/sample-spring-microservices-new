@@ -47,7 +47,7 @@ jobs:
           # Name of the image to replace the image
           name: organization-image
           # The new tag for the named image
-          newTag: ${{GITHUB_SHA}}
+          newTag: ${{github.sha}}
           # 
           newName: harbor.tanzu.be/library/iso-organization-service 
 
