@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: department
-        image: piomin/department:1.0
+        image: harbor.tanzu.be/library/iso-department-service:b7.20210923.002709
+        # image: piomin/department:1.0
         ports:
         - containerPort: 8080
         env:

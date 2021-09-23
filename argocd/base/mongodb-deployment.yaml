@@ -1,38 +1,36 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: employee
+  name: mongodb
   labels:
-    app: employee
+    app: mongodb
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: employee
+      app: mongodb
   template:
     metadata:
       labels:
-        app: employee
+        app: mongodb
     spec:
       containers:
-      - name: employee
-      # docker pull harbor.tanzu.be/library/iso-employee-service@sha256:0c4faa5df66fef76e4da1465b8dff8b738a8739abf6d8bec01c5db703d3028e9
-        image: harbor.tanzu.be/library/iso-employee-service@sha256:9d9a330ba21848e5a1bc78e2141276d2d228f6feb9a7ad9f27047b7df0fb86cd
-      # image: piomin/employee:1.0
+      - name: mongodb
+        image: mongo:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 27017
         env:
-        - name: MONGO_DATABASE
+        - name: MONGO_INITDB_DATABASE
           valueFrom:
             configMapKeyRef:
               name: mongodb
               key: database-name
-        - name: MONGO_USERNAME
+        - name: MONGO_INITDB_ROOT_USERNAME
           valueFrom:
             secretKeyRef:
               name: mongodb
               key: database-user
-        - name: MONGO_PASSWORD
+        - name: MONGO_INITDB_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
               name: mongodb
@@ -41,12 +39,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: employee
+  name: mongodb
   labels:
-    app: employee
+    app: mongodb
 spec:
   ports:
-  - port: 8080
+  - port: 27017
     protocol: TCP
   selector:
-    app: employee
+    app: mongodb

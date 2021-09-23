@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- app-namespace.yaml
+- department-deployment.yaml
+- organization-deployment.yaml
+- employee-deployment.yaml
+- mongodb-configmap.yaml
+- mongodb-secret.yaml
+- mongodb-deployment.yaml
+
+namespace: argocd-sample-app
+images:
+- name: organization-image
+  newName: harbor.tanzu.be/library/iso-organization-service
+  newTag: b15.20210923.161231
+
+- name: department-image
+  newName: harbor.tanzu.be/library/iso-department-service
+  newTag: b15.20210923.161231
+
+- name: employee-image
+  newName: harbor.tanzu.be/library/iso-employee-service
+  newTag: b15.20210923.161234

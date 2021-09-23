@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: organization
-        image: piomin/organization:1.0
+        image: harbor.tanzu.be/library/iso-organization-service@sha256:923c27dc1a3efd2905b0608e6442639f53569d83dd568809acceee5d9aab29ca
         ports:
         - containerPort: 8080
         env:
