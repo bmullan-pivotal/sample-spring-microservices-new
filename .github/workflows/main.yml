@@ -51,3 +51,7 @@ jobs:
           # 
           newName: harbor.tanzu.be/library/iso-organization-service 
 
+      - name: Run a multi-line script
+        run: |
+          cat ./argocd/base/kustomization.yaml
+          
