@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: argocd-sample-app
+  name: iso
 
 
 
