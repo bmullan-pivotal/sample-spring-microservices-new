@@ -4,6 +4,8 @@ resources:
 - app-namespace.yaml
 - department-deployment.yaml
 - organization-deployment.yaml
+- mongodb-configmap.yaml
+- mongodb-secret.yaml
 
 namespace: argocd-sample-app
 images:
