@@ -12,4 +12,4 @@ images:
 
 - name: employee-image
   newName: harbor.tanzu.be/library/iso-employee-service
-  newTag: latest
+  newTag: 78ce1f8
