@@ -5,4 +5,4 @@ metadata:
   namespace: iso
 data:
   database-name: admin
-  database-host: mongodb
+  database-host: mongodb.bmullan.domain
