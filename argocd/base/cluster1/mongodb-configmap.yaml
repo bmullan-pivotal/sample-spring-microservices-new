@@ -5,3 +5,4 @@ metadata:
   namespace: iso
 data:
   database-name: admin
+  database-host: mongodb
