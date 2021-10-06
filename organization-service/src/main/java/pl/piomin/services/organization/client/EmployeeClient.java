@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import pl.piomin.services.organization.model.Employee;
 
-@FeignClient(name = "employee")
+@FeignClient(name = "employee", url = "employee.bmullan.domain")
 public interface EmployeeClient {
 
 	@GetMapping("/organization/{organizationId}")
