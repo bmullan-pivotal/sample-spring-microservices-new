@@ -8,6 +8,7 @@ public class Employee {
 
 	@Id
 	private String id;
+	private String _id; 
 	private Long organizationId;
 	private Long departmentId;
 	private String name;
@@ -25,6 +26,15 @@ public class Employee {
 		this.age = age;
 		this.position = position;
 	}
+
+	public String get_Id() {
+		return _id;
+	}
+
+	public void set_Id(String _id) {
+		this._id = _id;
+	}
+
 
 	public String getId() {
 		return id;
