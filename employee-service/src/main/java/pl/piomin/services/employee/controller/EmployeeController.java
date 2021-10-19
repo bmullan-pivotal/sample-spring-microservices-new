@@ -39,7 +39,13 @@ public class EmployeeController {
 		LOGGER.info("Employee find");
 		return repository.findAll();
 	}
-	
+
+	@GetMapping("/hello")
+	public String hello() {
+		LOGGER.info("Employee hello");
+		return "hello";
+	}
+
 	@GetMapping("/department/{departmentId}")
 	public List<Employee> findByDepartment(@PathVariable("departmentId") Long departmentId) {
 		LOGGER.info("Employee find: departmentId={}", departmentId);
