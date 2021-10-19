@@ -46,6 +46,12 @@ public class EmployeeController {
 		return "hello";
 	}
 
+	@GetMapping("/hello1")
+	public String hello1() {
+		LOGGER.info("Employee hello1");
+		return "hello1";
+	}
+
 	@GetMapping("/department/{departmentId}")
 	public List<Employee> findByDepartment(@PathVariable("departmentId") Long departmentId) {
 		LOGGER.info("Employee find: departmentId={}", departmentId);
