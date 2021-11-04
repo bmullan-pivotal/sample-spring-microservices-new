@@ -4,7 +4,16 @@ spring:
   data:
     mongodb:
       uri: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOST}/${MONGO_DATABASE}
-      
+management:
+  metrics:
+    export:
+      wavefront:
+        api-token : ${WAVEFRONT_API_TOKEN}
+        uri : https://vmware.wavefront.com
+wavefront:
+  application:
+    name: se-demo-application
+    service: organization-service
 logging:
   pattern: 
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"

@@ -13,8 +13,7 @@ management:
 wavefront:
   application:
     name: se-demo-application
-    service: employee-service-2
-
+    service: employee-service
 logging:
   pattern: 
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
